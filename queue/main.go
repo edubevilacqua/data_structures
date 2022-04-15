@@ -17,10 +17,10 @@ func main() {
 		}
 		switch option {
 		case 1:
-			push(&arr)
+			enqueue(&arr)
 			show(arr)
 		case 2:
-			arr = pop(arr)
+			arr = dequeue(arr)
 			show(arr)
 		case 3:
 			show(arr)
@@ -32,7 +32,7 @@ func main() {
 	}
 }
 
-func push(arr *[]int) {
+func enqueue(arr *[]int) {
 	fmt.Print("Type a number you want add to the queue: ")
 	var addNumber int
 	_, err := fmt.Scanln(&addNumber)
@@ -43,7 +43,7 @@ func push(arr *[]int) {
 	fmt.Printf("\n[SUCCESS] Number %d was added to the queue!\n\n", addNumber)
 }
 
-func pop(arr []int) []int {
+func dequeue(arr []int) []int {
 	removedNumber := arr[0]
 	arr = arr[1:]
 	fmt.Printf("\n[SUCCESS] Number %d was removed from the queue!\n\n", removedNumber)
